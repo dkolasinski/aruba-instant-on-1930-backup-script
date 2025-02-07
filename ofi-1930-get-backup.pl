@@ -9,7 +9,12 @@
 ## 
 ## Tested with 2.9.0.x firmware on JL685A (Aruba Instant ON 1930)
 ## Tested with 3.1.0.x firmware on JL685A (Aruba Instant ON 1930)
-## Tested with v3.4.0.17 (CISCO CBS350-24T-4X stack)
+## Tested with v3.4.0.17:
+## * CISCO CBS350-24XS (whole stack)
+## * CISCO CBS350-24T-4X (whole stack)
+## * CISCO CBS350-48T-4X (whole stack)
+## * CISCO CBS350-48P-4X (whole stack)
+
 
 use strict;
 use LWP::UserAgent;
