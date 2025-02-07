@@ -1,15 +1,15 @@
 #!/usr/bin/perl
 ## Author: Dariusz Zielinski-Kolasinski
 ## Licence: GPL
-## Version: 1.0 (2025-02-06)
+## Version: 1.1 (2025-02-07)
 ##
 ## This is Aruba Instant ON 1930 Switch startup-configuration download script
 ##
 ## WARNING: disables TLS certificate validation
 ## 
-## Tested with 2.9.0.x firmware on JL685A
-## Tested with 3.1.0.x firmware on JL685A
-##
+## Tested with 2.9.0.x firmware on JL685A (Aruba Instant ON 1930)
+## Tested with 3.1.0.x firmware on JL685A (Aruba Instant ON 1930)
+## Tested with v3.4.0.17 (CISCO CBS350-24T-4X stack)
 
 use strict;
 use LWP::UserAgent;
@@ -90,11 +90,13 @@ if ($resp->is_redirect) {
 my $resp = $ua->get('https://'.$host.$initialLocation);
 
 if ($resp->is_success) {
-	if (index($resp->content, 'inputUsername') == -1) {
+	if (index($resp->content, 'inputUsername') != -1) {
+		print GREEN,"req 2. INITIAL REQ OK: ", YELLOW, " ARUBA INSTANT ON DETECTED\n", RESET;
+	} elsif (index($resp->content, 'UserCntrl') != -1) {
+		print GREEN,"req 2. INITIAL REQ OK: ", YELLOW, " CISCO CBS DETECTED\n", RESET;
+	} else {
 		print RED,"req 2. INITIAL REQ OK, BUT LOGIN FIELD NOT FOUND: ",RESET,$resp->content,"\n";
 		exit(1);
-	} else {
-		print GREEN,"req 2. INITIAL REQ OK\n",.RESET;
 	}
 } else {
 	print RED,"req 2. INITIAL REQ ERROR: ", RESET, $resp->status_line,"\n";
