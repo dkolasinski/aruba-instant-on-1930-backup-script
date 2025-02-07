@@ -7,7 +7,8 @@
 ##
 ## WARNING: disables TLS certificate validation
 ## 
-## Tested with 2.9.0 firmware on JL685A
+## Tested with 2.9.0.x firmware on JL685A
+## Tested with 3.1.0.x firmware on JL685A
 ##
 
 use strict;
