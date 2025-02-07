@@ -1,6 +1,8 @@
 # aruba-instant-on-1930-backup-script
 
-Aruba Instant ON 1930 startup-configuration download script
+Aruba Instant ON 1930 AND CISCO CBS350 startup-configuration download script
+
+Works on both. It is allmost the same GUI.
 
 ### Requirements
 
@@ -25,7 +27,7 @@ Proper execution:
 ```
 ./ofi-1930-get-backup.pl 10.10.10.10 admin some.password /tmp/download1
 req 1. LOCATION REQ OK
-req 2. INITIAL REQ OK
+req 2. INITIAL REQ OK:  CISCO CBS
 req 3. RSA KEY REQ OK
 req 3. LOGIN TOKEN REQ OK
 req 3. PASSWORD ENCRYPT ENABLE REQ OK
@@ -39,7 +41,7 @@ Login failure:
 ```
 ./ofi-1930-get-backup.pl 10.10.10.10 admin some.password /tmp/download1
 req 1. LOCATION REQ OK
-req 2. INITIAL REQ OK
+req 2. INITIAL REQ OK:  CISCO CBS
 req 3. RSA KEY REQ OK
 req 3. LOGIN TOKEN REQ OK
 req 3. PASSWORD ENCRYPT ENABLE REQ OK
