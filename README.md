@@ -1,8 +1,13 @@
 # aruba-instant-on-1930-backup-script
 
-Aruba Instant ON 1930 AND CISCO CBS350 startup-configuration download script
+This is startup-configuration download script, for automated backups.
 
-Works on both. It is allmost the same GUI.
+Works with:
+* Aruba Instant ON 1930
+* CISCO CBS350
+* CISCO C1300
+
+Works on Aruba and CISCO. It is allmost the same GUI.
 
 ### Requirements
 
